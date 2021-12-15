@@ -45,4 +45,54 @@ public TNodo <T> Ultimo (){
     
     return Temp;
 }
+
+public void Agregar (TNodo <T> nod){
+    
+    if (Cabeza == null){
+        
+        Cabeza = nod;
+        
+    }else{
+        
+        Ultimo().setSiguiente(nod);
+    }
+    
+    nod.setSiguiente(null);
 }
+
+public void Insertar (TNodo <T> nod){
+    
+    if (Cabeza == null){
+        
+        Cabeza = nod;
+        nod.setSiguiente(null);
+    }else{
+        
+        nod.setSiguiente(Cabeza);
+        Cabeza = nod;
+    }
+}
+    
+public TNodo<T> Anterior (TNodo<T> nod){
+    
+    TNodo<T> Ant;
+    TNodo<T> Temp;
+    Ant = null;
+    Temp = Cabeza;
+    
+    while (Temp != null){
+        
+        if (Temp.getSiguiente() == nod){
+            
+            Ant = Temp;
+            break;
+        }else{
+            
+            Temp = Temp.getSiguiente();
+        }
+    }
+    
+    return Ant;
+}  
+}
+
