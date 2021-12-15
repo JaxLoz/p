@@ -9,6 +9,33 @@ package listagenericaprueba;
  *
  * @author Javier M
  */
-public class TNodo {
+public class TNodo <T> {
+    
+    private T Datos;
+    private TNodo <T> siguiente;
+                                                                                                                                                                                       
+public <T> TNodo (){
+
+    Datos = null;
+    siguiente = null;
+}
+
+public void setDatos (T dat){
+ 
+    this.Datos = dat;
+}
+
+public void setSiguiente (TNodo <T> sig){
+    this.siguiente = sig;
+}
+
+public T getDatos (){
+    return this.Datos;
+}
+
+public TNodo <T> getSiguiente (){
+    return this.siguiente;
+}
+    
     
 }
