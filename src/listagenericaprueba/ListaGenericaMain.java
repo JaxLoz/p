@@ -43,5 +43,6 @@ public TNodo <T> Ultimo (){
         }
     }
     
+    return Temp;
 }
 }
