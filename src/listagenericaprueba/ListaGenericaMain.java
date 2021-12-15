@@ -93,6 +93,67 @@ public TNodo<T> Anterior (TNodo<T> nod){
     }
     
     return Ant;
-}  
 }
+
+public void Eliminar (TNodo <T> nod){
+    
+    TNodo<T> Ant;
+    
+    if(Cabeza == nod){
+        
+        Cabeza=Cabeza.getSiguiente();
+    }else{
+        Ant = Anterior(nod);
+        Ant.setSiguiente(nod.getSiguiente());
+    }
+    
+    nod.setSiguiente(null);
+}
+
+public TNodo<T> NodoPos (int Pos){
+    
+    int p;
+    TNodo<T> Nod;
+    p = 0;
+    Nod = Cabeza;
+    
+    while (Nod != null){
+        
+        if (p == Pos){
+            
+            break;
+        }else{
+            
+            p++;
+            Nod = Nod.getSiguiente();
+        }
+    }
+      return Nod;
+}
+
+public void LimipiarLista(){
+    
+    while (Cabeza != null){
+        
+        Eliminar(Cabeza);
+    }
+}
+
+public int ContarNodos (){
+    
+    int cant; 
+    TNodo temp;
+    cant = 0;
+    temp = Cabeza;
+    
+    while (temp != null){
+        
+        cant++;
+        temp=temp.getSiguiente();
+    }
+    
+    return cant;
+}
+}
+
 
