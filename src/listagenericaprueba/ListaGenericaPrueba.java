@@ -16,6 +16,11 @@ public class ListaGenericaPrueba {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        TListaProducto p = new TListaProducto();
+        
+        
+        
     }
     
 }
